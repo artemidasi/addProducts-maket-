@@ -1,13 +1,15 @@
 <template>
-  <!-- <h2 class="main__title">Добавление товара</h2> -->
-  <div class="main-container">
+  <HeaderApp />
+  <section class="main">
     <Form />
-    <TodoList @add-product="addProduct" :todos="todos" />
-  </div>
+    <TodoList v-if="todos.length > 0" @delete-product=deleteProduct :todos=todos />
+    <p class="main__nocontent" v-else>Список пуст</p>
+  </section>
 </template>s
 
 <script>
 import { nanoid } from 'nanoid'
+import HeaderApp from '@/components/HeaderApp.vue'
 import Form from '@/components/Form.vue'
 import TodoList from '@/components/TodoList.vue'
 import cardsArray from '@/data/cards.json'
@@ -25,18 +27,17 @@ export default {
     }
   },
   components: {
+    HeaderApp,
     Form,
     TodoList
   },
   methods: {
-    addProduct (id) {
-      this.todos = this.todos.map((product) => {
-        if (product.id === id) {
-          product.added = true
+    deleteProduct (id) {
+      this.todos = this.todos.filter(product => {
+        if (product.id !== id) {
+          return product
         }
-        return product
       })
-      console.log(this.todos)
     }
   }
 }
@@ -44,4 +45,23 @@ export default {
 
 <style lang="scss">
 @import "@/styles/scss/index";
+.main {
+    display: grid;
+    grid-template-columns: 332px 1fr;
+    grid-template-rows: 1fr;
+    gap: 16px;
+    &__nocontent {
+      font-size: 25px;
+    }
+}
+@media all and (max-width: 1024px) {
+  .main {
+    grid-template-columns: 250px 1fr;
+  }
+}
+@media all and (max-width: 900px) {
+  .main {
+    grid-template-columns: 200px 1fr;
+}
+}
 </style>

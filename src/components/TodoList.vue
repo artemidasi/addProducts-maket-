@@ -1,6 +1,6 @@
 <template>
   <ul class="product__list">
-    <TodoItem @add-product="addProduct" :key=todo.id :todo=todo v-for="todo in todos" />
+    <TodoItem @delete-product=deleteProduct :key=todo.id :todo=todo v-for="todo in todos" />
   </ul>
 </template>
 
@@ -13,9 +13,8 @@ export default {
     TodoItem
   },
   methods: {
-    addProduct (id) {
-      console.log(id)
-      this.$emit('add-product', id)
+    deleteProduct (id) {
+      this.$emit('delete-product', id)
     }
   }
 }
@@ -27,5 +26,10 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 16px;
+}
+@media all and (max-width: 900px) {
+  .product__list {
+    grid-template-columns: repeat(2, 1fr);
+    }
 }
 </style>
