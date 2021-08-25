@@ -38,6 +38,7 @@ export default {
     line-height: 36px;
   }
   &__select {
+    font-family: 'Source Sans Pro', monospace;
     padding: 10px 16px;
     border-radius: 4px;
     color: $color__B4;
