@@ -1,0 +1,85 @@
+@import "_mixin";
+// @include fontInfo('TTFirsNeue-Regular', 400);
+// @include fontInfo('TTFirsNeue-Bold', 700);
+// @include fontInfo('Roboto-Regular', 400);
+// @include fontInfo('Roboto-Bold', 700);
+* {
+    box-sizing: border-box;
+    font-family: 'TTFirsNeue-Regular'
+}
+
+body,
+html,
+p {
+    cursor: default;
+    @include marginAndPadingZero();
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+ul {
+    @include marginAndPadingZero();
+    list-style: none;
+}
+
+p {
+    font-family: inherit;
+}
+
+input,
+textarea,
+button:focus,
+button:active {
+    &:hover,
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+    }
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+address {
+    font-style: normal;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+button,
+textarea {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: default;
+    font-family: 'TTFirsNeue-Bold';
+    padding: 0;
+    margin: 0;
+    font-weight: inherit;
+}

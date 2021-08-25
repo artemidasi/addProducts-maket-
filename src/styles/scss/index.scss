@@ -1,0 +1,53 @@
+@import "global";
+@import "./containers/header.scss";
+@import "./containers/main.scss";
+@import "./containers/footer.scss";
+body {
+    background-color: $color__E5;
+}
+
+#app {
+    .main-container {
+        display: grid;
+        grid-template-columns: 332px 1fr;
+        grid-template-rows: 1fr;
+        gap: 16px;
+    }
+}
+
+.main-container {
+    width: 100%;
+    padding: 0 13px;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .main-container {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        max-width: 962px;
+    }
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        max-width: 714px;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-container {
+        max-width: 478px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-container {
+        max-width: 278px;
+    }
+}
