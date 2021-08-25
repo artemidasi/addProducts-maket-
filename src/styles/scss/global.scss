@@ -1,17 +1,18 @@
 @import "_mixin";
-// @include fontInfo('TTFirsNeue-Regular', 400);
-// @include fontInfo('TTFirsNeue-Bold', 700);
-// @include fontInfo('Roboto-Regular', 400);
-// @include fontInfo('Roboto-Bold', 700);
+@import "_variables";
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@include fontInfo('SourceSansProSemiBold',
+600);
 * {
     box-sizing: border-box;
-    font-family: 'TTFirsNeue-Regular'
 }
 
 body,
 html,
 p {
-    cursor: default;
+    font-family: 'Source Sans Pro', monospace;
+    color: $color__3F;
+    font-weight: 400;
     @include marginAndPadingZero();
 }
 
@@ -37,8 +38,9 @@ p {
 
 input,
 textarea,
-button:focus,
-button:active {
+button,
+button {
+    font-family: 'Source Sans Pro', monospace;
     &:hover,
     &:focus,
     &:active {
@@ -77,9 +79,9 @@ h3,
 h4,
 h5,
 h6 {
-    cursor: default;
-    font-family: 'TTFirsNeue-Bold';
     padding: 0;
     margin: 0;
-    font-weight: inherit;
+    color: $color__3F;
+    font-family: 'Source Sans Pro', monospace;
+    font-weight: 600;
 }

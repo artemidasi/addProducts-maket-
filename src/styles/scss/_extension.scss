@@ -2,3 +2,39 @@
     display: flex;
     flex-wrap: nowrap;
 }
+
+%effects-element {
+    &:hover {
+        border: 1px solid $color__orange;
+    }
+    &:focus {
+        border: 1px solid $color__orangeNormal;
+    }
+    &:active {
+        border: 1px solid $color__orangeBold;
+    }
+}
+
+%effects-button {
+    transition: transform .4s ease-in-out;
+    &:hover {
+        color: rgb(247, 114, 91);
+        transform: scale(1.1);
+        border: 1px solid $color__orange;
+    }
+    &:focus {
+        border: 1px solid $color__orangeNormal;
+    }
+    &:active {
+        border: 1px solid $color__orangeBold;
+    }
+}
+
+%form-elements {
+    width: 100%;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}

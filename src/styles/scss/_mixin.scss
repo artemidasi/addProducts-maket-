@@ -3,11 +3,12 @@
     padding: 0;
 }
 
+// "../../assets/fonts/"+$nameFile+'.woff2'
 // Создаю шрифт
 @mixin fontInfo ($nameFile, $weight) {
     @font-face {
         font-family: $nameFile;
-        src: url("../fonts/"+$nameFile+".woff2") format('woff2'), url("../fonts/"+$nameFile+'.woff') format('woff');
+        src: url('/src/assets/fonts/'+$nameFile+'.woff2') format('woff2'), url('/src/assets/fonts/'+$nameFile+'.woff') format('woff');
         font-display: swap;
         font-weight: $weight;
         font-style: normal;
